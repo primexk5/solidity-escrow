@@ -1,1 +1,5 @@
-/.env
+.env
+out/
+cache/
+broadcast/
+deploy.log
