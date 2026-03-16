@@ -70,10 +70,10 @@ contract EscrowLifecycleTest is Test {
         vm.prank(buyer);
         uint256 dealId = escrow.createDeal(seller, DEAL_AMOUNT);
 
-        uint256 initialBuyerBalance = buyer.balance;
-
         vm.prank(buyer);
         vm.deal(buyer, DEAL_AMOUNT);
+        uint256 initialBuyerBalance = buyer.balance;
+
         escrow.deposit{value: DEAL_AMOUNT}(dealId);
 
         vm.expectEmit(true, true, true, true);
